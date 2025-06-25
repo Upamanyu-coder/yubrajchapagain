@@ -145,7 +145,7 @@ const Footer: React.FC = () => {
                   href="https://yubrazdhakal.com.np"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-green-400 hover:bg-gray-700 transition-all duration-200"
+                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-blue-400 hover:bg-gray-700 transition-all duration-200"
                 >
                   <Globe className="w-5 h-5" />
                 </a>
@@ -178,7 +178,7 @@ const Footer: React.FC = () => {
                   by{" "}
                   <a
                     href="https://yubrazdhakal.com.np"
-                    className="underline text-gray-500"
+                    className="text-white"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

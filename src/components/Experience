@@ -1,0 +1,221 @@
+import React from "react";
+import { Calendar, MapPin, Award, Briefcase } from "lucide-react";
+
+const Experience: React.FC = () => {
+  const experiences = [
+    {
+      role: "Financial Analyst Intern",
+      company: "Global Finance Solutions",
+      location: "Kathmandu, Nepal",
+      duration: "2023 - Present",
+      description:
+        "Analyzing financial data, preparing reports, and assisting in tax planning for diverse client portfolio.",
+      achievements: [
+        "Reduced client tax liability by 15% through strategic planning",
+        "Automated financial reporting processes improving efficiency by 30%",
+        "Assisted in audit of 20+ companies across various industries",
+      ],
+    },
+    {
+      role: "Accounting Assistant",
+      company: "Precision Accounting Services",
+      location: "Kathmandu, Nepal",
+      duration: "2022 - 2023",
+      description:
+        "Handled bookkeeping, GST compliance, and financial statement preparation for small to medium businesses.",
+      achievements: [
+        "Managed accounting records for 15+ clients",
+        "Achieved 100% compliance rate for GST filings",
+        "Implemented digital accounting systems for 10 clients",
+      ],
+    },
+    {
+      role: "Tax Consultant (Freelance)",
+      company: "Independent Practice",
+      location: "Remote",
+      duration: "2021 - 2022",
+      description:
+        "Provided tax consultation services to individuals and small businesses, specializing in income tax and GST.",
+      achievements: [
+        "Served 25+ individual and business clients",
+        "Achieved average tax savings of 20% for clients",
+        "Maintained 98% client satisfaction rate",
+      ],
+    },
+  ];
+
+  const certifications = [
+    {
+      title: "CA Final",
+      issuer: "Institute of Chartered Accountants of Nepal",
+      year: "2024 (Expected)",
+      status: "In Progress",
+    },
+    {
+      title: "Advanced Excel for Finance",
+      issuer: "Microsoft Learning",
+      year: "2023",
+      status: "Completed",
+    },
+    {
+      title: "GST Practitioner Certificate",
+      issuer: "Tax Academy Nepal",
+      year: "2022",
+      status: "Completed",
+    },
+    {
+      title: "Financial Modeling & Valuation",
+      issuer: "CFA Institute",
+      year: "2022",
+      status: "Completed",
+    },
+  ];
+
+  return (
+    <section id="experience" className="py-20 bg-gray-900">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Professional{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-yellow-400">
+              Journey
+            </span>
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            A track record of delivering exceptional results and continuous
+            professional development in the field of chartered accountancy and
+            financial consulting.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-16">
+          {/* Experience Timeline */}
+          <div>
+            <h3 className="text-2xl font-bold text-white mb-8 flex items-center">
+              <Briefcase className="w-6 h-6 mr-3 text-blue-400" />
+              Professional Experience
+            </h3>
+
+            <div className="space-y-8">
+              {experiences.map((exp, index) => (
+                <div
+                  key={index}
+                  className="relative pl-8 border-l-2 border-gray-700 last:border-l-0"
+                >
+                  <div className="absolute -left-2 top-0 w-4 h-4 bg-blue-500 rounded-full"></div>
+
+                  <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition-all duration-300">
+                    <h4 className="text-xl font-bold text-white mb-2">
+                      {exp.role}
+                    </h4>
+                    <p className="text-blue-400 font-semibold mb-2">
+                      {exp.company}
+                    </p>
+
+                    <div className="flex flex-wrap gap-4 mb-4 text-sm text-gray-400">
+                      <span className="flex items-center">
+                        <Calendar className="w-4 h-4 mr-1" />
+                        {exp.duration}
+                      </span>
+                      <span className="flex items-center">
+                        <MapPin className="w-4 h-4 mr-1" />
+                        {exp.location}
+                      </span>
+                    </div>
+
+                    <p className="text-gray-300 mb-4">{exp.description}</p>
+
+                    <div className="space-y-2">
+                      <h5 className="text-white font-semibold">
+                        Key Achievements:
+                      </h5>
+                      {exp.achievements.map((achievement, achIndex) => (
+                        <div
+                          key={achIndex}
+                          className="flex items-start space-x-2"
+                        >
+                          <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-gray-300 text-sm">
+                            {achievement}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Certifications & Education */}
+          <div>
+            <h3 className="text-2xl font-bold text-white mb-8 flex items-center">
+              <Award className="w-6 h-6 mr-3 text-yellow-400" />
+              Certifications & Education
+            </h3>
+
+            <div className="space-y-6">
+              {certifications.map((cert, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-yellow-500 transition-all duration-300"
+                >
+                  <div className="flex justify-between items-start mb-2">
+                    <h4 className="text-lg font-bold text-white">
+                      {cert.title}
+                    </h4>
+                    <span
+                      className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                        cert.status === "Completed"
+                          ? "bg-green-600 text-green-100"
+                          : "bg-yellow-600 text-yellow-100"
+                      }`}
+                    >
+                      {cert.status}
+                    </span>
+                  </div>
+                  <p className="text-gray-400 mb-1">{cert.issuer}</p>
+                  <p className="text-gray-500 text-sm">{cert.year}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Skills Summary */}
+            <div className="mt-12 bg-gray-800 p-6 rounded-xl border border-gray-700">
+              <h4 className="text-lg font-bold text-white mb-4">
+                Technical Skills
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Advanced Excel",
+                  "Tally ERP",
+                  "QuickBooks",
+                  "SAP",
+                  "Financial Modeling",
+                  "Power BI",
+                  "SQL",
+                  "Python",
+                  "GST Compliance",
+                  "Income Tax",
+                  "Audit",
+                  "Risk Management",
+                  "Financial Analysis",
+                  "Business Advisory",
+                ].map((skill, index) => (
+                  <span
+                    key={index}
+                    className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Experience;
