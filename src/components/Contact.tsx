@@ -53,8 +53,8 @@ const Contact: React.FC = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "cpg.yubrajchapagain.com.np",
-      link: "mailto:cpg.yubrajchapagain.com.np",
+      value: "cpg@yubrajchapagain.com.np",
+      link: "mailto:cpg@yubrajchapagain.com.np",
     },
 
     {
